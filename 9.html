@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題：配列のフィルタリング<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>配列 numbers を用意する。</dd>
+    <dd>配列の中から偶数のみを抽出し、新しい配列 evenNumbers を作成する。</dd>
+    <dd>evenNumbers をコンソールに出力する。</dd>
+  </dl>
+
+  <script>
+    // 偶数判定する対象の配列
+    let numbers = [1, 2, 3, 4, 5, 6];
+    // 偶数のみの配列
+    let evenNumbers = []
+
+    // 偶数判定する配列の個数分の繰り返し
+    numbers.forEach(function(number) {
+      // 2で割り切れる数か判定
+      if(number % 2 == 0) {
+        // 配列に格納
+        evenNumbers.push(number);
+      }
+    });
+
+    // コンソールに出力
+    console.log(evenNumbers);
+  </script>
+</body>
+</html>

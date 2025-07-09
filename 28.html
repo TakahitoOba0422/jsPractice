@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：文字列の最初の文字を大文字に変える関数 capitalize を作成してください
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>引数に文字列を1つ受け取る。</dd>
+    <dd>先頭の1文字を大文字に、それ以外はそのままにする。</dd>
+    <dd>空文字列が来たらそのまま空文字を返す。</dd>
+    
+    <dd>この配列を使って、全員の平均点を計算して表示するコードを書いてください。</dd>
+  </dl>
+
+  <script>
+    function capitalize(e) {
+      if(e !== '') {
+        const upper = e.charAt(0).toUpperCase();
+        const lower = e.slice(1);
+      return upper + lower;
+      } else {
+        return '';
+      }
+    }
+
+    console.log(capitalize('hello'));
+  </script>
+</body>
+</html>

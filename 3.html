@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題: 偶数と奇数の判定プログラム<br>
+    ユーザーに1つの数字を入力してもらい、その数字が「偶数」か「奇数」かを判定してコンソールに表示するプログラムを作成してください。<br>
+    <br>
+    手順:<br>
+    ユーザーに1つの数字を入力させます。<br>
+    入力された数字が偶数か奇数かを判定します。<br>
+    判定結果をコンソールに表示します。<br>
+  </p>
+
+  <button type="button" onclick="userInput()">ボタンだよ</button>
+
+  <p id="result"></p>
+
+  <script>
+    function userInput() {
+      // 入力ダイアログ
+      let userInput = window.prompt('数字を入力してください');
+      const inputNum  = userInput.split(",").map(Number);
+
+      // 奇数・偶数を判別
+      if(inputNum % 2 === 0) {
+        // 結果を出力
+        document.getElementById('result').textContent = '偶数：' + inputNum;
+      } else {
+        // 結果を出力
+        document.getElementById('result').textContent = '奇数：' + inputNum;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：配列の要素を大文字に変換<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>小文字の文字列が入った配列 words = ["apple", "banana", "cherry"] を用意する</dd>
+    <dd>要素をすべて 大文字に変換 して新しい配列を作成し、コンソールに出力する。</dd>
+  </dl>
+
+  <script>
+    // 対象の配列
+    const words = ['apple', 'banana', 'cherry'];
+
+    // 新しい配列に格納
+    const newWords = words.map(function(word) {
+      // 大文字に変換
+      return word.toUpperCase();
+    });
+
+    // コンソールに出力
+    console.log(newWords);
+  </script>
+</body>
+</html>

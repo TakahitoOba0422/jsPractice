@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題: 年齢によるメッセージ表示<br>
+    課題内容<br>
+    ユーザーに年齢を入力してもらい、その年齢に応じてメッセージを表示するプログラムを作成してください。<br>
+    以下の条件に従ってメッセージを表示します。<br>
+    18歳未満: 「あなたは未成年です」<br>
+    18歳以上かつ65歳未満: 「あなたは成人です」<br>
+    65歳以上: 「あなたはシニアです」
+  </p>
+  <button type="button" onclick="inputStart()">スタート</button>
+  <p id="message"></p>
+
+  <script>
+    function inputStart() {
+      // ダイアログを表示、年齢を変数に定義
+      let age = window.prompt('年齢を入力してください');
+      // 文字列を数値に変換
+      age = Number(age);
+      // メッセージ表示箇所を取得
+      let message = document.getElementById('message');
+
+      // 入力が数値・空白・0・負の数の場合
+      // isNanで数値以外か判定
+      if(isNaN(age) || age <= 0) {
+        // メッセージを表示
+        message.textContent = '有効な年齢を入力してください';
+        // 関数終了
+        return;
+      }
+
+      // 入力された数値によって条件分岐
+      if(age < 18) {
+        // 18歳以下ならあなたは未成年ですと表示
+        message.textContent = 'あなたは未成年です';
+      } else if(age < 65) {
+        // 18歳以上65以下ならあなたは成人ですと表示
+        message.textContent = 'あなたは成人です';
+      } else {
+        // 65歳以上ならあなたは高齢者ですと表示
+        message.textContent = 'あなたはシニアです';
+      }
+    }
+  </script>
+</body>
+</html>

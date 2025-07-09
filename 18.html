@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：文字列の中で、もっとも出現回数が多い文字を求める
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>最も多く出現している1文字を求めてください（スペース " " も1文字としてカウントしてOKです）。</dd>
+    <dd>また、何回出現したのかも表示してください。</dd>
+  </dl>
+
+  <script>
+    const input = "javascript is awesome";
+    const count = {};
+    let maxCount = 0;
+    let maxchar;
+
+    for(const char of input) {
+      if(count[char]) {
+        count[char]++;
+      } else {
+        count[char] = 1;
+      }
+
+      if(count[char] > maxCount) {
+        maxCount = count[char];
+        maxchar = char;
+      }
+    }
+
+    console.log(count);
+    console.log('文字：' + maxchar + ', 出現回数：' + maxCount);
+  </script>
+</body>
+</html>

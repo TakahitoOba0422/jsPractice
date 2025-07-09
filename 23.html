@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：今日が週の何曜日かを表示しよう
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>JavaScript を使って、今日が何曜日かを判定し、「今日は〇曜日です」と出力するプログラムを作ってください。</dd>
+  </dl>
+
+  <script>
+    let today = new Date().getDay();
+    const days = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
+
+    console.log(`今日は${days[today]}です`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+  <p>
+    課題：要素の取得とテキストの変更
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>以下のHTMLがあります。<b>ボタンをクリックしたときに、「ここにメッセージが表示されます」のテキストを「こんにちは、DOM！」に変更してください。</dd>
+  </dl>
+
+  <p id="message">ここにメッセージが表示されます</p>
+  <button id="btn">表示</button>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', function() {
+      let message = document.getElementById('message');
+      message.textContent = 'こんにちは、DOM！';
+    });
+  </script>
+</body>
+</html>

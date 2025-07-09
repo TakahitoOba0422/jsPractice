@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：「シーザー暗号」を解読
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>以下のように、アルファベットを1文字分だけ後ろにずらした暗号文があります。
+      これを元に戻す（復号する）関数を作ってください。</dd>
+      <dd>const encoded = "ifsf jt b tfdsfu nfttbhf"; // ← 解読対象</dd>
+  </dl>
+
+  <script>
+    const encoded = "ifsf jt b tfdsfu nfttbhf";
+    let decoded = '';
+
+    for(let char of encoded) {
+      if(char !== ' ') {
+        decoded += String.fromCharCode(char.charCodeAt(0) - 1);
+      } else {
+        decoded += ' ';
+      }
+    }
+
+    console.log(decoded);
+  </script>
+</body>
+</html>

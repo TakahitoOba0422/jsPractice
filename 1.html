@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題: 単語の出現回数を数えるプログラム<br>
+    ユーザーが入力した文字列に含まれる各単語の出現回数をカウントして表示するプログラムを作成してください。<br>
+    ユーザーに文字列を入力させます。（例: "apple banana apple orange banana apple"）<br>
+    入力された文字列を単語ごとに分割します。<br>
+    各単語の出現回数を数えます。<br>
+    結果をコンソールに出力します。
+  </p>
+
+  <button type="button" onclick="userInput()">ボタンだよ</button>
+
+  <script>
+    function userInput() {
+      let inputText = window.prompt('文字列を入力してください');
+      let words = inputText.split(' ');
+      let wordsCount = {};
+
+      words.forEach(word => {
+        if(wordsCount[word]) {
+          wordsCount[word]++;
+        } else {
+          wordsCount[word] = 1;
+        }
+      });
+
+      console.log(wordsCount);
+    }
+  </script>
+</body>
+</html>

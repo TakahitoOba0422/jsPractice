@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：得点の平均を計算
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>次のような配列があります：</dd>
+    <dd>const students = [<br>
+        { name: "田中", score: 80 },<br>
+        { name: "佐藤", score: 75 },<br>
+        { name: "鈴木", score: 90 },<br>
+        { name: "山本", score: 60 }<br>
+      ];
+    </dd>
+    <dd>この配列を使って、全員の平均点を計算して表示するコードを書いてください。</dd>
+  </dl>
+
+  <script>
+    const students = [
+      { name: "田中", score: 80 },
+      { name: "佐藤", score: 75 },
+      { name: "鈴木", score: 90 },
+      { name: "山本", score: 60 }
+    ];
+
+    function renderAverage(arr) {
+      let total = 0;
+      arr.forEach(function(i) {
+        total = total + i.score;
+      });
+      let average = total / students.length;
+
+      console.log(`平均点は${average}点です`);
+    }
+
+    renderAverage(students);
+
+    function renderAverage2(arr) {
+      let total = arr.reduce((sum, s) => sum + s.score, 0)
+      let average = total / students.length;
+      console.log(`平均点は${average}点です`);
+    }
+
+    renderAverage2(students);
+  </script>
+</body>
+</html>

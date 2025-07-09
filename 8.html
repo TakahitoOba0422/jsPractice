@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題：次の要件を満たすシンプルなWebページを作成してください<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>ページにul要素を用意する。（空でOK）</dd>
+    <dd>配列 ["りんご", "バナナ", "みかん", "ぶどう", "すいか"] を用意する。</dd>
+    <dd>配列の要素を liに変換し、ulに追加する。</dd>
+    <dd>追加後、ボタンをクリックするとリストの内容がシャッフルされるようにする。</dd>
+  </dl>
+
+  <ul id="fruitList"></ul>
+  <button type="button" id="shuffleBtn">シャッフルする</button>
+
+  <script>
+    // 配列の定義
+    let fruits = ["りんご", "バナナ", "みかん", "ぶどう", "すいか"];
+    let list = document.getElementById('fruitList');
+    let shuffleBtn = document.getElementById('shuffleBtn');
+
+    // 配列のリストの表示
+    function renderList() {
+      // リストのクリア
+      list.innerHTML = "";
+      fruits.forEach(fruit => {
+        let li = document.createElement(`li`);
+        li.textContent = fruit;
+        list.appendChild(li);
+      });
+    }
+
+    // 配列のシャッフル
+    function shuffleArray(array) {
+      // Fisher-Yates shuffle
+      // 配列の最後の要素から順にシャッフル(array.length - 1で0になる手前までループ)
+      for(let i = array.length - 1; i > 0; i--) {
+        // 整数0以上i以下のどこかをjとする
+        let j = Math.floor(Math.random() * (i + 1));
+        // array[i](現在の要素)とarray[j](ランダムに選んだ要素)を入れ替え
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // 初期表示
+    document.addEventListener('DOMContentLoaded', () => {
+      renderList();
+    });
+
+    // シャッフルの実行
+    shuffleBtn.addEventListener('click', () =>  {
+      shuffleArray(fruits);
+      renderList();
+    })
+  </script>
+</body>
+</html>

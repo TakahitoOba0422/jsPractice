@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：回文かどうかを判定しよう
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>ある文字列が「回文（前から読んでも後ろから読んでも同じ）」かどうかを判定してください。</dd>
+  </dl>
+
+  <script>
+    function isPalindrome(str) {
+      const reversedStr = str.split('').reverse().join('');
+
+      return str === reversedStr;
+    }
+
+    console.log(isPalindrome('level'));
+    console.log(isPalindrome('hello'));
+    console.log(isPalindrome('たけやぶやけた'));
+  </script>
+</body>
+</html>

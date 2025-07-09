@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：時間帯に応じたあいさつを出力
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>Date オブジェクトを使って、現在の時間に応じて次のようなあいさつ文を出力するプログラムを作ってください。</dd>
+      <dd>5:00〜11:59	おはようございます<br>
+        12:00〜17:59	こんにちは<br>
+        18:00〜21:59	こんばんは<br>
+        22:00〜翌4:59	おやすみなさい</dd>
+  </dl>
+
+  <script>
+    let nowHours = new Date().getHours();
+    console.log(nowHours)
+
+    if(5 <= nowHours && nowHours < 12) {
+      console.log(`今は${nowHours}時です。おはようございます`)
+    } else if(12 <= nowHours && nowHours < 18) {
+      console.log(`今は${nowHours}時です。こんにちは`);
+    } else if(18 <= nowHours && nowHours < 22) {
+      console.log(`今は${nowHours}時です。こんばんは`);
+    } else {
+      console.log(`今は${nowHours}時です。おやすみなさい`);
+    }
+  </script>
+</body>
+</html>

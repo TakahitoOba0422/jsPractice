@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題: 文字列の逆転<br>
+    課題内容<br>
+    ユーザーに任意の文字列を入力してもらい、その文字列を逆転させるプログラムを作成してください。<br>
+    逆転させた文字列を表示します。
+  </p>
+  <button type="button" onclick="reverseString()">スタート</button>
+  <p>反転：<span id="result"></span></p>
+
+  <p id="result"></p>
+
+  <script>
+    function reverseString() {
+      //  入力ダイアログを表示
+      let userInput = window.prompt('入力してください');
+      // 空白か判定
+      if(userInput) {
+        // 入力された文字列で配列を作成
+        let inputSplit = userInput.split('');
+        // 文字列を反転
+        let inputReverse = inputSplit.reverse();
+        // 配列を結合して文字列を作成
+        let inputJoin = inputReverse.join('');
+        // 反転した文字列を表示
+        document.getElementById('result').textContent = inputJoin;
+      } else {
+        document.getElementById('result').textContent = '有効な文字列を入力してください。';
+      }
+    }
+  </script>
+</body>
+</html>

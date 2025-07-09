@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題: 配列内の最大値を見つける<br>
+    課題内容<br>
+    任意の数の整数が入った配列があります。例えば、[5, 3, 8, 1, 2] のような配列です。<br>
+    配列内の最大値を見つけ、その値をコンソールに表示するプログラムを作成してください。
+  </p>
+  <button type="button" onclick="inputStart()">スタート</button>
+  <p>最大値：<span id="result"></span></p>
+
+  <p id="result"></p>
+
+  <script>
+    function inputStart() {
+      // ダイアログを表示
+      let inputNumbers = window.prompt('数をスペース区切りで入力してください');
+      // 文字列を数値の配列に変換
+      let numbers = inputNumbers.split(' ').map(Number);
+      let max = numbers[0];
+      // numbers配列分繰り返し実行
+      for(let i = 1; i < numbers.length; i++) {
+        // maxよりも値が大きい場合maxに再代入
+        if(max < numbers[i]) {
+          max = numbers[i];
+        }
+      }
+
+      // 最大値を表示
+      document.getElementById('result').textContent = max;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：配列内の最大値を求めよ<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>引数として数値の配列を受け取る関数 getMaxNumber(arr) を定義してください。</dd>
+    <dd>配列内で最も大きい数値を返すようにしてください。</dd>
+    <dd>Math.max() は 使用禁止 とします。</dd>
+    <dd>配列が空の場合は null を返してください。</dd>
+  </dl>
+
+  <script>
+    function getMaxNumber(arr) {
+      // 配列がない時はnullを返す
+      if(arr.length === 0) {
+        return null;
+      } else {
+        let max = arr[0];
+        for(let i = 1; i< arr.length; i++) {
+          if(max < arr[i]) {
+            max = arr[i]
+          }
+        }
+        // 最大値を返す
+        return max;
+      }
+    }
+    console.log(getMaxNumber([3, 4, 5, 6, 100]))
+  </script>
+</body>
+</html>

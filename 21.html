@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：得点から成績ランクをつけよう
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>const students = [<br>
+      { name: "田中", score: 85 },<br>
+      { name: "佐藤", score: 72 },<br>
+      { name: "鈴木", score: 63 },<br>
+      { name: "山本", score: 48 },<br>
+      { name: "高橋", score: 91 }<br>
+    ];</dd>
+    <dd>各生徒の得点に応じて、ランク（A/B/C/D）を表示してください。</dd>
+    <dd>| 得点    | ランク |<br>
+      | 90以上  | A   |<br>
+      | 70〜89 | B   |<br>
+      | 60〜69 | C   |<br>
+      | 〜59以下 | D   |<br>
+      </dd>
+  </dl>
+
+  <script>
+    const students = [
+      { name: "田中", score: 85 },
+      { name: "佐藤", score: 72 },
+      { name: "鈴木", score: 63 },
+      { name: "山本", score: 48 },
+      { name: "高橋", score: 91 },
+    ];
+
+    for(let i = 0; i < students.length; i++) {
+      if(students[i].score >= 90) {
+        console.log(`${students[i].name}さんのランクはAランクです`);
+      } else if(students[i].score >= 70) {
+        console.log(`${students[i].name}さんのランクはBランクです`);
+      } else if(students[i].score >= 60) {
+        console.log(`${students[i].name}さんのランクはCランクです`);
+      } else {
+        console.log(`${students[i].name}さんのランクはDランクです`);
+      }
+    }
+  </script>
+</body>
+</html>

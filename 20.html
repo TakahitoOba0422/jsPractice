@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：正しい答えを選んで判定
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>const quiz = [<br>
+      { question: "日本の首都は？", answer: "東京" },<br>
+      { question: "1 + 1 は？", answer: "2" },<br>
+      { question: "りんごは英語で？", answer: "apple" }<br>
+    ];</dd>
+    <dd>次のような ユーザーの回答配列があるとします：const userAnswers = ["東京", "3", "Apple"];</dd>
+    <dd>上記をもとに、以下のように正誤を表示するスクリプトを書いてください：</dd>
+    <dd>問題1: 正解</dd>
+    <dd>問題2: 不正解</dd>
+    <dd>問題3: 正解（大文字小文字の違いは無視）</dd>
+  </dl>
+
+  <script>
+    const quiz = [
+      { question: "日本の首都は？", answer: "東京" },
+      { question: "1 + 1 は？", answer: "2" },
+      { question: "りんごは英語で？", answer: "apple" }
+    ];
+    const userAnswers = ["東京", "3", "Apple"];
+
+    for(let i = 0; i < quiz.length; i++) {
+      let correct = quiz[i].answer;
+      let answer = userAnswers[i];
+      
+      if(correct.toLowerCase() === answer.toLowerCase()) {
+        console.log(`問題${i + 1}:正解`);
+      } else {
+        console.log(`問題${i + 1}:不正解`);
+      }
+    }
+  </script>
+</body>
+</html>

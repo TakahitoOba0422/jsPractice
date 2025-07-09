@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：プロパティを持つかチェックせよ！
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>以下の関数 hasKey(obj, key) を作ってください。</dd>
+    <dd>key は文字列（調べたいキー名）</dd>
+    <dd>obj がそのキーを持っていたら true を返す</dd>
+    <dd>持っていなければfalseを返す</dd>
+  </dl>
+
+  <script>
+    function hasKey(obj, key) {
+      // keyがobjの中にあるかチェック
+      if(key in obj) {
+        return true;
+      } else {
+        return false
+      }
+    }
+    console.log(hasKey({
+      name: "John", 
+      age: 30
+    }, 'age'));
+    console.log(hasKey({
+      name: "John"
+    }, 'age'));
+  </script>
+</body>
+</html>

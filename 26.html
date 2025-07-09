@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：文字列操作
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>次の関数 maskEmail は、メールアドレスのユーザー名の一部を * で隠す関数です。以下の仕様になるように関数を完成させてください</dd>
+      <dd>function maskEmail(email) {<br>
+      }<br>
+      console.log(maskEmail("yamada@example.com")); // 出力例: y****a@example.com<br>
+      console.log(maskEmail("tanaka@example.com")); // 出力例: t****a@example.com
+      </dd>
+  </dl>
+
+  <script>
+    function maskEmail(email) {
+      const [user, domain] = email.split('@');
+
+      if(user.length <= 2) {
+        return email;
+      } else {
+        const first = user[0];
+        const last = user[user.length - 1];
+        const masked = '*'.repeat(user.length - 2);
+
+        return `${first}${masked}${last}@${domain}`;
+      }
+    } 
+
+      console.log(maskEmail("yamada@example.com")); // 出力例: y****a@example.com
+      console.log(maskEmail("tanaka@example.com")); // 出力例: t****a@example.com
+  </script>
+</body>
+</html>

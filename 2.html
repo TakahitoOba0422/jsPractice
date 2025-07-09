@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題: 数字の合計と平均を計算するプログラム<br>
+    ユーザーに5つの数字を入力してもらい、それらの合計と平均を計算して表示するプログラムを作成してください。<br>
+    手順:<br>
+    ユーザーに5つの数字を入力させます。（1つずつ入力してもよいし、カンマ区切りで1回で入力させてもよい）<br>
+    入力された数字の合計を計算します。<br>
+    合計を使って平均を計算します。<br>
+    合計と平均をコンソールに表示します。
+  </p>
+
+  <button type="button" onclick="userInput()">ボタンだよ</button>
+
+  <p id="totalNum"></p>
+  <p id="averageNum"></p>
+
+  <script>
+    function userInput() {
+      // 入力ダイアログを表示
+      let userInput = window.prompt('数字をカンマで区切って入力してね');
+      // 入力された文字列を数値に変換し「,」で分割し
+      let InputNum = userInput.split(',').map(Number);
+      // 配列全てを足し算し合計を出す
+      let sum = InputNum.reduce((total, num) => total + num, 0);
+      // 配列の合計を配列の数で割り平均を出す
+      let average = sum / InputNum.length;
+      // 結果を出力
+      document.getElementById('totalNum').textContent = '合計：' + sum;
+      document.getElementById('averageNum').textContent = '平均：' +  average;
+    }
+  </script>
+</body>
+</html>

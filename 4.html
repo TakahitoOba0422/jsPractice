@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+</head>
+
+<body>
+  <p>
+    課題：簡単なカウントダウンタイマーの作成<br>
+    JavaScriptを使って、カウントダウンタイマーを作成してください。以下の機能を実装しましょう。<br>
+    要件<br>
+    入力フォーム：ユーザーがカウントダウンする時間を秒単位で入力できるテキストボックスを作成してください。<br>
+    スタートボタン：カウントダウンを開始するためのボタンを作成してください。<br>
+    カウントダウン表示：残り時間をリアルタイムで表示する領域を作成してください。<br>
+    カウントダウン終了時のアラート：カウントダウンが0になったらアラートを表示してください。
+  </p>
+
+  <input type="number" id="inputCount" placeholder="秒数を入力">
+  <button type="button" onclick="start()">スタート</button>
+  <p>残り時間：<span id="countRender"></span></p>
+
+  <p id="result"></p>
+
+  <script>
+    function start() {
+      // 入力された文字列を数値に変換
+      let count = parseInt(document.getElementById('inputCount').value, 10);
+      let countRender = document.getElementById('countRender');
+      function countDown() {
+        if(count > 0) {
+          // 秒数を表示
+          countRender.textContent = count;
+          count--;
+          // 1秒ごとにcountDown呼び出し
+          setTimeout(countDown, 1000);
+        } else {
+          // 終了のアラートの表示
+          window.alert('終了しました');
+          // 終了を表示
+          countRender.textContent = '終了';
+        }
+      }
+      // カウントダウンを開始
+      countDown();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：配列の中から 70点以上の点数だけを取り出して、新しい配列に入れて 表示してください
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>const scores = [80, 55, 90, 100, 60, 70];</dd>
+    <dd>この配列の中から 70点以上の点数だけを取り出して、新しい配列に入れて 表示してください。</dd>
+  </dl>
+
+  <script>
+    const scores = [80, 55, 90, 100, 60, 70, 120, 69, 10000];
+    const renderScores = [];
+
+    for(const score of scores) {
+      if(score >= 70) {
+        renderScores.push(score);
+      }
+    }
+
+    console.log(renderScores);
+  </script>
+</body>
+</html>

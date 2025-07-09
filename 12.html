@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+  <p>
+    課題：日付を使ったメッセージ表示<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>現在の日付を取得し、今日が 平日（月〜金） か 土日 かを判定する。</dd>
+    <dd>曜日に応じて「今日は平日です」「今日は休日です」とコンソールに出力する。</dd>
+  </dl>
+
+  <script>
+    // 今日の日付を格納
+    const today = new Date();
+    // 今日の曜日を取得
+    const day = today.getDay();
+
+    // 土日か判定
+    if(day === 0 || day === 6) {
+      console.log('今日は休日です！')
+    } else {
+      console.log('今日は平日です！')
+    }
+  </script>
+</body>
+</html>

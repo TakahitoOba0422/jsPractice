@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：ユニークな値を取り出そう！
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>配列を引数に取る関数 getUniqueValues(arr) を作成してください。</dd>
+    <dd>配列の中から 重複していない値だけ を、一度ずつだけ含む新しい配列として返してください。</dd>
+    <dd>元の配列は変更しないでください。</dd>
+  </dl>
+
+  <script>
+    function getUniqueValues(arr) {
+      let uniques = [];
+      arr.forEach(e => {
+        if(!uniques.includes(e)) {
+          uniques.push(e);
+        }
+      });
+      return uniques;
+    }
+    console.log(getUniqueValues([1,2,3,3,3]))
+
+    // set ver
+    function getUniqueValues2(arr) {
+      let uniques = new Set(arr);
+      return [...uniques];
+    }
+    console.log(getUniqueValues2([1,2,3]))
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS練習</title>
+</head>
+
+<body>
+  <p>
+    課題：偶数だけ取り出す関数<br>
+  </p>
+
+  <dl>
+    <dt>要件</dt>
+    <dd>配列を引数に取る関数 getEvenNumbers(arr) を作成してください。</dd>
+    <dd>配列の中から 偶数だけを取り出して新しい配列として返してください。</dd>
+    <dd>元の配列は変更しないでください。</dd>
+    <dd>配列が空だったり、偶数がなければ 空の配列を返してください。</dd>
+  </dl>
+
+  <script>
+    function getEvenNumbers(arr) {
+      // 配列を定義
+      let numbers = [];
+      
+      // 引数分繰り返し
+      arr.forEach(element => {
+        // 偶数か判定
+        if(element % 2 === 0) {
+          // 配列に格納
+          numbers.push(element);
+        }
+      });
+
+      // 配列を返す
+      return numbers;
+    }
+
+    console.log(getEvenNumbers([1, 2, 3, 4]))
+
+    // filter()ver
+    function getEvenNumbers2(arr) {
+      // filter()で配列内の偶数をチェックし返す
+      return arr.filter(element => element % 2 ===0);
+    }
+
+    console.log(getEvenNumbers2([1, 2, 3, 4]))
+  </script>
+</body>
+</html>
